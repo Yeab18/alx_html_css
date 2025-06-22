@@ -1,0 +1,147 @@
+/* === RESET === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === VARIABLES === */
+:root {
+  --main-bg: #0a0a23;
+  --main-text: #fff;
+  --accent-color: #ff6565;
+  --max-width: 1000px;
+  --font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* === BASE === */
+body {
+  font-family: var(--font-family);
+  color: var(--main-text);
+  background: var(--main-bg);
+}
+
+/* === HEADER/HERO === */
+.hero {
+   background: url("images/headphones_hero_1.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* === NAVIGATION === */
+.nav {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Menu icon for mobile */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: var(--main-text);
+  cursor: pointer;
+}
+
+/* Menu links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--main-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+  color: var(--accent-color);
+}
+
+/* === HERO CONTENT === */
+.hero-content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cta {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: opacity 0.3s ease;
+}
+
+.cta:hover,
+.cta:active {
+  opacity: 0.9;
+}
+
+.subtext {
+  max-width: 600px;
+  margin: auto;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 480px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--main-bg);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+}
